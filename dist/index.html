@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#061a25">
-  <meta name="description" content="中国自然资源互动数字展：现状图谱、变量实验室、大事迹时间轴与自然资源纪念日历。">
-  <title>山海共生 · 中国自然资源互动图志</title>
+  <meta name="description" content="中国自然资源数字展：现状图谱、变量实验室、大事迹时间轴与自然资源纪念日历。">
+  <title>山海共生 · 中国自然资源全景图谱</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061a25'/%3E%3Cpath d='M7 43 22 22l10 13 7-9 18 17' fill='none' stroke='%239ae4c2' stroke-width='5'/%3E%3Cpath d='M8 50c10-5 16-5 24 0s15 5 24 0' fill='none' stroke='%2353b9c7' stroke-width='4'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -37,7 +37,7 @@
       <div class="hero-shade"></div>
       <div class="hero-content reveal">
         <p class="eyebrow">CHINA · NATURAL RESOURCES ATLAS</p>
-        <h1>中国自然资源<br><em>互动全景图谱</em></h1>
+        <h1>中国自然资源<br><em>全景图谱</em></h1>
         <p class="hero-lead">土地、水、森林、草原、湿地、海洋与矿产彼此牵动。拖动变量、点开节点、沿时间前行，观察这套生命共同体如何运行。</p>
         <div class="hero-actions">
           <a class="primary-button" href="#lab">进入变量实验室 <span aria-hidden="true">↘</span></a>
@@ -58,39 +58,70 @@
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow dark">01 · CURRENT STATE</p>
-            <h2>自然资源现状<br>互动思维导图</h2>
+            <h2>七类资源<br>探索图谱</h2>
           </div>
-          <p>点击任一资源节点，查看最新公开数据、资源关系与统计口径。连接线表示资源之间的主要作用路径。</p>
+          <p>从一幅资源影像进入它的特点、现实问题和治理对策。点击关联资源，观察山水林田湖草沙如何彼此牵动。</p>
         </div>
 
-        <div class="atlas-layout reveal">
-          <div class="mindmap" aria-label="中国自然资源思维导图">
-            <svg id="map-lines" class="map-lines" aria-hidden="true"></svg>
-            <div class="map-core">
-              <span>山水林田湖草沙</span>
-              <strong>生命共同体</strong>
-              <small>系统治理</small>
+        <div class="resource-explorer reveal" aria-label="中国七类自然资源探索图谱">
+          <div class="explorer-topline">
+            <div><span>RESOURCE INDEX</span><strong>选择一种资源</strong></div>
+            <div class="explore-progress" aria-live="polite">
+              <span id="explore-count">已探索 1 / 7</span>
+              <i><b id="explore-progress-bar"></b></i>
             </div>
-            <div id="resource-nodes" class="resource-nodes"></div>
           </div>
-          <article id="resource-detail" class="resource-detail" aria-live="polite">
-            <header>
-              <span id="resource-order" class="resource-order">01 / 07</span>
-              <span id="resource-status" class="status-chip"></span>
-            </header>
-            <p id="resource-label" class="resource-label"></p>
-            <div class="metric-line">
-              <strong id="resource-metric"></strong>
-              <span id="resource-unit"></span>
+          <div id="resource-nodes" class="resource-nodes"></div>
+
+          <div class="resource-stage">
+            <div id="resource-visual" class="resource-visual sprite-land" role="img" aria-label="土地资源影像">
+              <div class="visual-wash"></div>
+              <div class="visual-caption">
+                <span id="resource-order" class="resource-order">01 / 07</span>
+                <p id="resource-label" class="resource-label"></p>
+                <h3 id="resource-visual-name"></h3>
+                <p id="resource-visual-tagline"></p>
+              </div>
             </div>
-            <p id="resource-year" class="metric-year"></p>
-            <p id="resource-summary" class="resource-summary"></p>
-            <div>
-              <h3>关键联系</h3>
-              <div id="resource-relations" class="relation-list"></div>
-            </div>
-            <a id="resource-source" class="source-link" href="#" target="_blank" rel="noreferrer">查看数据来源 ↗</a>
-          </article>
+
+            <article id="resource-detail" class="resource-detail" aria-live="polite">
+              <header>
+                <span id="resource-status" class="status-chip"></span>
+                <button id="next-resource" class="next-resource" type="button">下一类资源 →</button>
+              </header>
+              <div class="metric-line">
+                <strong id="resource-metric"></strong>
+                <span id="resource-unit"></span>
+              </div>
+              <p id="resource-year" class="metric-year"></p>
+              <p id="resource-summary" class="resource-summary"></p>
+
+              <div class="resource-insights">
+                <section class="insight-feature">
+                  <h3><span>01</span>资源特点</h3>
+                  <ul id="resource-features"></ul>
+                </section>
+                <section class="insight-problem">
+                  <h3><span>02</span>主要问题</h3>
+                  <ul id="resource-problems"></ul>
+                </section>
+                <section class="insight-action">
+                  <h3><span>03</span>治理对策</h3>
+                  <ul id="resource-actions"></ul>
+                </section>
+              </div>
+
+              <div class="resource-links">
+                <div><span>资源关系</span><strong>它还连接着</strong></div>
+                <div id="resource-relations" class="relation-list"></div>
+              </div>
+              <a id="resource-source" class="source-link" href="#" target="_blank" rel="noreferrer">查看数据来源 ↗</a>
+            </article>
+          </div>
+          <div class="system-note">
+            <strong>山水林田湖草沙是生命共同体</strong>
+            <span>任何一类资源的变化，都会沿着水循环、食物链、空间用途与产业链传导到其他资源。</span>
+          </div>
         </div>
         <p class="scope-note reveal">口径提示：自然资源部国土调查中的“湿地”地类，与林草部门湿地统计范围不同，两个数字不能直接比较。</p>
       </div>
@@ -237,14 +268,14 @@
         </div>
         <div class="editorial-note reveal">
           <p><strong>数据说明</strong> 页面采用截至 2026 年 10 月可核验的最新公开资料，不同部门、年度与统计口径已在相应位置标注。演示模型用于理解资源联系，不替代专业评估。</p>
-          <span>策划 / 数据可视化 / 互动设计</span>
+          <span>策划 / 数据可视化 / 交互设计</span>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="shell"><span>山海共生 · 中国自然资源互动图志</span><a href="#top">返回顶部 ↑</a></div>
+    <div class="shell"><span>山海共生 · 中国自然资源全景图谱</span><a href="#top">返回顶部 ↑</a></div>
   </footer>
 </body>
 </html>

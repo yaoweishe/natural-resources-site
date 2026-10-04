@@ -2,42 +2,66 @@ const resources = [
   {
     id:"land", name:"土地", en:"LAND", metric:"1.286", unit:"亿公顷耕地", year:"2023年度国土变更调查",
     status:"粮食根基", summary:"耕地约19.29亿亩。数量、质量与生态保护共同构成粮食安全的空间基础。",
+    tagline:"承载生产、生活与生态空间，是所有陆域资源的共同底盘。",
+    features:["支撑粮食与农产品生产","兼具空间载体和生态功能","形成缓慢、区域差异明显"],
+    problems:["优质耕地保护压力较大","部分地区土壤退化和污染","建设、农业与生态用途竞争"],
+    actions:["严守耕地与永久基本农田红线","建设高标准农田、保护黑土地","节约集约用地并推进土壤修复"],
     relations:["water","forest","grass","mineral"], source:"https://www.gov.cn/lianbo/bumen/202503/P020250322461627579892.pdf"
   },
   {
     id:"water", name:"水", en:"WATER", metric:"3.1123", unit:"万亿立方米", year:"2024年水资源总量",
     status:"时空不均", summary:"全国水资源总量31123.0亿立方米，用水总量5928.0亿立方米，其中农业用水占61.6%。",
+    tagline:"沿流域循环，连接上游与下游、陆地与海洋、生产与生态。",
+    features:["可循环但总量与时空分布不均","流域关联性和公共属性突出","维持生活、生产与生态过程"],
+    problems:["水土资源空间分布不匹配","局地污染与生态流量不足","旱涝极端事件风险上升"],
+    actions:["以水定城、定地、定人、定产","推进农业、工业和城市节水","实施流域统筹与河湖湿地修复"],
     relations:["land","forest","wetland","ocean"], source:"https://water.wuxi.gov.cn/doc/2025/06/10/4591076.shtml"
   },
   {
     id:"forest", name:"森林", en:"FOREST", metric:"25.09", unit:"% 覆盖率", year:"2025年工作会议公布",
     status:"持续增长", summary:"森林蓄积量达209.88亿立方米。森林是水源涵养、固碳、生物多样性保护的重要载体。",
+    tagline:"陆地生态系统的主体，也是水库、粮库、钱库与碳库。",
+    features:["涵养水源、保持水土和固碳","提供连续的生物栖息空间","兼具生态、经济与文化价值"],
+    problems:["区域间森林质量差异明显","火灾、病虫害和极端天气威胁","部分栖息地破碎化"],
+    actions:["科学开展国土绿化","提高天然林和人工林质量","建设生态廊道并强化灾害监测"],
     relations:["water","land","grass","wetland"], source:"https://www.forestry.gov.cn/c/www/lcdt/656968.jhtml"
   },
   {
     id:"grass", name:"草原", en:"GRASSLAND", metric:"50.52", unit:"% 植被盖度", year:"2024年公开数据",
     status:"生态屏障", summary:"草原综合植被盖度50.52%，连接畜牧生产、防风固沙、水土保持与北方生态安全。",
+    tagline:"横跨干旱、半干旱和高寒地区，是北方生态安全的重要屏障。",
+    features:["面积广、类型多、季节变化显著","支撑畜牧业和牧区文化","发挥防风固沙与水土保持作用"],
+    problems:["局地超载放牧与退化仍然存在","荒漠化和鼠虫害风险交织","对气候波动高度敏感"],
+    actions:["落实草畜平衡和禁牧休牧","分区修复退化、沙化草原","加强遥感监测和牧区可持续生计"],
     relations:["land","water","forest","wetland"], source:"https://www.forestry.gov.cn/c/www/szxx/648557.jhtml"
   },
   {
     id:"wetland", name:"湿地", en:"WETLAND", metric:"8+", unit:"亿亩", year:"2024年林草统计口径",
     status:"稳定保护", summary:"湿地面积稳定在8亿亩以上。它连接陆地与水域，在蓄洪、净水、固碳和候鸟栖息中发挥作用。",
+    tagline:"水陆相接的生态过渡带，是候鸟驿站与天然的蓄水净水系统。",
+    features:["具有蓄洪、净水和固碳功能","生物多样性高度集中","对流域水文过程变化敏感"],
+    problems:["围垦占用和岸线硬化压力","补水不足导致水文节律改变","外来物种与面源污染影响"],
+    actions:["实行分级管理和用途管制","恢复自然水文连通与植被","推动流域协同保护和社区参与"],
     relations:["water","forest","grass","ocean"], source:"https://www.forestry.gov.cn/c/www/szxx/648557.jhtml"
   },
   {
     id:"ocean", name:"海洋", en:"OCEAN", metric:"83.7", unit:"% 优良水质", year:"2024年近岸海域",
     status:"总体稳定", summary:"近岸海域优良水质面积比例为83.7%。海洋承载渔业、港航、能源与滨海生态系统。",
+    tagline:"从海岸带延伸到深远海，连接蓝色经济、气候调节与生物多样性。",
+    features:["空间广阔、立体性和流动性强","调节气候并提供蓝碳生态系统","承载渔业、港航与海洋能源"],
+    problems:["陆源污染和局地富营养化","滨海湿地及典型生境退化","开发强度与海洋灾害风险并存"],
+    actions:["坚持陆海统筹和湾区综合治理","修复海岸带、红树林与海草床","完善海洋监测和生态预警网络"],
     relations:["water","wetland","land","mineral"], source:"https://www.mee.gov.cn/ywgz/sthjjcgl/hjzljcypj/202506/t20250605_1120773.shtml"
   },
   {
     id:"mineral", name:"矿产", en:"MINERALS", metric:"173", unit:"种矿产", year:"截至2023年底",
     status:"资源保障", summary:"我国已发现173种矿产。开发利用需要同时考虑供给安全、节约集约与矿山生态修复。",
+    tagline:"不可再生且分布集中，是能源、制造业和新兴产业的重要物质基础。",
+    features:["不可再生、形成周期极长","区域分布和品位差异显著","连接能源安全与完整产业链"],
+    problems:["部分关键矿产对外依存度较高","开发可能扰动土地和水环境","低品位资源利用效率有待提升"],
+    actions:["加强战略性矿产勘查与储备","发展绿色矿山和循环利用","落实全生命周期生态修复责任"],
     relations:["land","water","ocean","forest"], source:"https://www.gov.cn/lianbo/bumen/202503/P020250322461627579892.pdf"
   }
-];
-
-const positions = [
-  [50,13],[80,28],[84,68],[62,87],[32,87],[15,60],[19,26]
 ];
 
 const timelineEvents = [
@@ -85,6 +109,7 @@ const presets = {
 };
 const impactNames = {food:"食物基础",waterSafe:"水安全",eco:"生态韧性",buffer:"灾害缓冲",industry:"产业保障"};
 let selectedResource = "land";
+let seenResources = new Set(["land"]);
 let selectedEvent = 0;
 let viewDate = new Date(2026, new Date().getMonth(), 1);
 let savedDays = new Set(JSON.parse(localStorage.getItem("nature-passport") || "[]"));
@@ -92,27 +117,22 @@ let savedDays = new Set(JSON.parse(localStorage.getItem("nature-passport") || "[
 function el(id){ return document.getElementById(id); }
 function resourceById(id){ return resources.find(function(r){return r.id===id;}); }
 
-function renderMindmap(){
-  el("resource-nodes").innerHTML = resources.map(function(r,i){
-    var pos=positions[i];
-    return '<button class="resource-node '+(r.id===selectedResource?'active':'')+'" style="left:'+pos[0]+'%;top:'+pos[1]+'%" data-resource="'+r.id+'" type="button"><span>'+r.en+'</span><strong>'+r.name+'</strong></button>';
-  }).join("");
-  el("resource-nodes").querySelectorAll("button").forEach(function(button){
-    button.addEventListener("click",function(){selectedResource=button.dataset.resource;renderMindmap();renderResource();});
-  });
-  drawMapLines();
+function selectResource(id){
+  selectedResource=id;
+  seenResources.add(id);
+  renderMindmap();
+  renderResource();
 }
 
-function drawMapLines(){
-  var svg=el("map-lines");
-  var box=svg.getBoundingClientRect();
-  if(!box.width)return;
-  var cx=box.width/2, cy=box.height/2;
-  svg.setAttribute("viewBox","0 0 "+box.width+" "+box.height);
-  svg.innerHTML=positions.map(function(pos,i){
-    var x=box.width*pos[0]/100,y=box.height*pos[1]/100;
-    return '<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" class="'+(resources[i].id===selectedResource?'active':'')+'"></line>';
+function renderMindmap(){
+  el("resource-nodes").innerHTML = resources.map(function(r,i){
+    return '<button class="resource-node '+(r.id===selectedResource?'active':'')+'" data-resource="'+r.id+'" aria-pressed="'+(r.id===selectedResource)+'" type="button"><span class="resource-thumb sprite-'+r.id+'" aria-hidden="true"></span><span class="resource-node-copy"><strong>'+r.name+'</strong><small>'+String(i+1).padStart(2,"0")+'</small></span></button>';
   }).join("");
+  el("resource-nodes").querySelectorAll("button").forEach(function(button){
+    button.addEventListener("click",function(){selectResource(button.dataset.resource);});
+  });
+  el("explore-count").textContent="已探索 "+seenResources.size+" / 7";
+  el("explore-progress-bar").style.width=(seenResources.size/7*100)+"%";
 }
 
 function renderResource(){
@@ -120,16 +140,23 @@ function renderResource(){
   el("resource-order").textContent=String(resources.indexOf(r)+1).padStart(2,"0")+" / 07";
   el("resource-status").textContent=r.status;
   el("resource-label").textContent=r.en+" · "+r.name;
+  el("resource-visual-name").textContent=r.name+"资源";
+  el("resource-visual-tagline").textContent=r.tagline;
+  el("resource-visual").className="resource-visual sprite-"+r.id;
+  el("resource-visual").setAttribute("aria-label",r.name+"资源主题影像");
   el("resource-metric").textContent=r.metric;
   el("resource-unit").textContent=r.unit;
   el("resource-year").textContent=r.year;
   el("resource-summary").textContent=r.summary;
+  el("resource-features").innerHTML=r.features.map(function(x){return "<li>"+x+"</li>";}).join("");
+  el("resource-problems").innerHTML=r.problems.map(function(x){return "<li>"+x+"</li>";}).join("");
+  el("resource-actions").innerHTML=r.actions.map(function(x){return "<li>"+x+"</li>";}).join("");
   el("resource-source").href=r.source;
   el("resource-relations").innerHTML=r.relations.map(function(id){
     var n=resourceById(id);return '<button type="button" data-resource="'+id+'">'+n.name+' ↗</button>';
   }).join("");
   el("resource-relations").querySelectorAll("button").forEach(function(button){
-    button.addEventListener("click",function(){selectedResource=button.dataset.resource;renderMindmap();renderResource();});
+    button.addEventListener("click",function(){selectResource(button.dataset.resource);});
   });
 }
 
@@ -276,6 +303,10 @@ viewDate=new Date(2026,commemorations[selectedEvent][0]-1,1);
 renderCalendar();renderStory();initReveal();
 
 document.querySelectorAll(".preset").forEach(function(b){b.addEventListener("click",function(){applyPreset(b.dataset.preset);});});
+el("next-resource").addEventListener("click",function(){
+  var next=(resources.findIndex(function(r){return r.id===selectedResource;})+1)%resources.length;
+  selectResource(resources[next].id);
+});
 el("reset-model").addEventListener("click",function(){applyPreset("balanced");});
 document.querySelectorAll(".timeline-filter").forEach(function(b){b.addEventListener("click",function(){
   document.querySelectorAll(".timeline-filter").forEach(function(x){x.classList.remove("active");x.setAttribute("aria-pressed","false");});
@@ -295,7 +326,6 @@ el("mobile-nav").addEventListener("click",function(){
   var open=el("nav-menu").classList.toggle("open");el("mobile-nav").setAttribute("aria-expanded",String(open));
 });
 el("nav-menu").querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){el("nav-menu").classList.remove("open");el("mobile-nav").setAttribute("aria-expanded","false");});});
-window.addEventListener("resize",drawMapLines);
 window.addEventListener("scroll",function(){
   var max=document.documentElement.scrollHeight-innerHeight;
   el("reading-progress").style.width=(max?scrollY/max*100:0)+"%";
